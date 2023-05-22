@@ -1,8 +1,10 @@
 import ClientOnly from "./components/ClientOnly";
-import Model from "./components/models/Model";
+import RegisterModel from "./components/models/RegisterModel";
 import Navbar from "./components/navbar/Navbar";
 import "./globals.css";
 import { Nunito } from "next/font/google";
+import { Toaster } from "react-hot-toast";
+import ToasterProvider from "./providers/ToasterProvider";
 
 export const metadata = {
   title: "Airbnb Clone",
@@ -22,7 +24,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <ClientOnly>
-          <Model title='Hello world' isOpen />
+          <Toaster/>
+          <RegisterModel />
           <Navbar />
         </ClientOnly>
         {children}
